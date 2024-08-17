@@ -231,30 +231,30 @@ scheduler_events = {
 # }
 
 
-fixtures = [
-     {
-        "dt":
-            "Custom Field",
-            "filters":[[
-                "name",
-                 "in",
-                 {
-                     "Employee-custom_father_name",
-                     "Employee-custom_age",
-                     "Employee-custom_joining_department",
-                     "Employee-custom_joining_designation",
-                     "Employee-custom_current_department_",
-                     "Employee-custom_current_designation",
-                     "Employee-custom_reporting_manager_name",
-                     "Employee-custom_work_location_type",
-                     "Employee-custom_current_work_address",
-                     "Employee-custom_aadhar_number",
-                     "Employee-custom_current_experience_"
+# fixtures = [
+#      {
+#         "dt":
+#             "Custom Field",
+#             "filters":[[
+#                 "name",
+#                  "in",
+#                  {
+#                      "Employee-custom_father_name",
+#                      "Employee-custom_age",
+#                      "Employee-custom_joining_department",
+#                      "Employee-custom_joining_designation",
+#                      "Employee-custom_current_department_",
+#                      "Employee-custom_current_designation",
+#                      "Employee-custom_reporting_manager_name",
+#                      "Employee-custom_work_location_type",
+#                      "Employee-custom_current_work_address",
+#                      "Employee-custom_aadhar_number",
+#                      "Employee-custom_current_experience_"
                      
 
 
                     
-                 },    
-             ]]
-     }
- ]
+#                  },    
+#              ]]
+#      }
+#  ]
