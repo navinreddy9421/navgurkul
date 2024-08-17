@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "autoname": "format:{month}-{YY}-{employee}",
+ "creation": "2024-08-15 17:32:41.564643",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "note",
+  "column_break_5twk",
+  "report_manager",
+  "month",
+  "section_break_6olc",
+  "time_tracker_table",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "column_break_5twk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.custom_reporting_manager_name",
+   "fieldname": "report_manager",
+   "fieldtype": "Data",
+   "label": "Report Manager"
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Month",
+   "options": "\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_6olc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "time_tracker_table",
+   "fieldtype": "Table",
+   "label": "Time Tracker Table",
+   "options": "Time Tracker Table"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Time Tracker",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Any Undefined Half Days & Full Days are considered as Leave Without Pay(LWP)",
+   "fieldname": "note",
+   "fieldtype": "Read Only",
+   "label": "Note"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-16 14:19:32.784475",
+ "modified_by": "Administrator",
+ "module": "Navgurukul",
+ "name": "Time Tracker",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

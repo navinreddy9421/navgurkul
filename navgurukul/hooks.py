@@ -133,7 +133,7 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
 # 	"all": [
 # 		"navgurukul.tasks.all"
 # 	],
@@ -149,7 +149,10 @@ app_license = "mit"
 # 	"monthly": [
 # 		"navgurukul.tasks.monthly"
 # 	],
-# }
+   "cron":{ "0 0 * * *":[
+        "navgurukul.events.age_increase" ,
+        "navgurukul.events.exprencess_incress"]},
+}
 
 # Testing
 # -------
@@ -227,3 +230,31 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+fixtures = [
+     {
+        "dt":
+            "Custom Field",
+            "filters":[[
+                "name",
+                 "in",
+                 {
+                     "Employee-custom_father_name",
+                     "Employee-custom_age",
+                     "Employee-custom_joining_department",
+                     "Employee-custom_joining_designation",
+                     "Employee-custom_current_department_",
+                     "Employee-custom_current_designation",
+                     "Employee-custom_reporting_manager_name",
+                     "Employee-custom_work_location_type",
+                     "Employee-custom_current_work_address",
+                     "Employee-custom_aadhar_number",
+                     "Employee-custom_current_experience_"
+                     
+
+
+                    
+                 },    
+             ]]
+     }
+ ]
