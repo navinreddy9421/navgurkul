@@ -47,3 +47,51 @@ def exprencess_incress():
             frappe.db.set_value("Employee", employee['name'], {"custom_current_experience_": exprenc})
     
     frappe.db.commit()
+
+
+
+def leaveapplication(doc, method):
+    
+    if doc.status =="Rejected":
+        frappe.msgprint(f"🚨 Heyy 👩🏻‍💻!! Leave Application is Rejected for {doc.employee_name}!! 📣")
+    else:
+        frappe.msgprint(f"🚨Heyy 👩🏻‍💻!! Leave Application is Raised for {doc.employee_name}!! 📣!")
+
+
+def onsubmit(doc, method):
+    frappe.msgprint(f"🚨Heyy 👩🏻‍💻!! Leave Application is {doc.status} for {doc.employee_name}!! 📣")
+
+
+def attendancerequest(doc,method):
+    if doc.workflow_state =="Pending":
+        frappe.msgprint(f"🚨 Heyy 👩🏻‍💻!! The Attedance Request is Raised for {doc.employee_name}!! 📣")
+    if doc.workflow_state == "Rejected":
+        frappe.msgprint(f"🚨 Heyy 👩🏻‍💻!! The Attedance Request is Rejected for {doc.employee_name}!! 📣")
+
+
+
+
+def attendancework(doc,method):
+
+    if doc.workflow_state == "Approved":
+        frappe.msgprint(f"🚨 Heyy 👩🏻‍💻!! The Attedance Request is Approved for {doc.employee_name}!! 📣")
+
+def compoff(doc,method):
+    if doc.workflow_state =="Pending":
+        frappe.msgprint(f"🚨 Heyy 👩🏻‍💻!! The CompOff Leave Request is Raised for {doc.employee_name}!! 📣")
+    if doc.workflow_state == "Rejected":
+        frappe.msgprint(f"🚨 Heyy 👩🏻‍💻!! The CompOff Leave Request is Rejected for {doc.employee_name}!! 📣")
+
+
+
+
+def compoffsub(doc,method):
+
+    if doc.workflow_state == "Approved":
+        frappe.msgprint(f"🚨 Heyy 👩🏻‍💻!! The CompOff Leave Request is Approved for {doc.employee_name}!! 📣")
+
+
+def timetracker(doc,method):
+
+    if doc.workflow_state == "Approved":
+        frappe.msgprint(f"🚨 Heyy  👩🏻‍💻!! The Time Tracker is Approved For {doc.employee_name}!! 📣")        

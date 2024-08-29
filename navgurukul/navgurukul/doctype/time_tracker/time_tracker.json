@@ -13,6 +13,8 @@
   "month",
   "section_break_6olc",
   "time_tracker_table",
+  "section_break_axxz",
+  "total_working_hours",
   "amended_from"
  ],
  "fields": [
@@ -71,12 +73,22 @@
    "fieldname": "note",
    "fieldtype": "Read Only",
    "label": "Note"
+  },
+  {
+   "fieldname": "section_break_axxz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_working_hours",
+   "fieldtype": "Float",
+   "label": "Total Working Hours",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-16 14:19:32.784475",
+ "modified": "2024-08-24 16:57:13.372807",
  "modified_by": "Administrator",
  "module": "Navgurukul",
  "name": "Time Tracker",

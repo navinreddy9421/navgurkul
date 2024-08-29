@@ -122,13 +122,28 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
+doc_events = {
 # 	"*": {
 # 		"on_update": "method",
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
 # 	}
-# }
+        "Leave Application":{
+            "before_save":"navgurukul.events.leaveapplication",
+            "on_submit":"navgurukul.events.onsubmit"
+        },
+        "Attendance Request":{
+            "before_save":"navgurukul.events.attendancerequest",
+            "on_submit":"navgurukul.events.attendancework"
+        },
+        "Compensatory Leave Request":{
+            "before_save":"navgurukul.events.compoff",
+            "on_submit":"navgurukul.events.compoffsub"
+        },
+        "Time Tracker":{
+            "on_submit":"navgurukul.events.timetracker"
+        }
+}
 
 # Scheduled Tasks
 # ---------------
