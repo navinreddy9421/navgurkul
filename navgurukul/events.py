@@ -95,3 +95,39 @@ def timetracker(doc,method):
 
     if doc.workflow_state == "Approved":
         frappe.msgprint(f"🚨 Heyy  👩🏻‍💻!! The Time Tracker is Approved For {doc.employee_name}!! 📣")        
+
+
+import frappe
+from frappe.utils.pdf import get_pdf
+from frappe.core.doctype.communication.email import make
+from datetime import datetime
+@frappe.whitelist(allow_guest=True)
+def send_salary_slip(doc,method):
+   
+    salary_slip = frappe.get_doc("Salary Slip",doc.name)
+    current_date =salary_slip.start_date
+    # current_date = datetime.now()
+    formatted_date = current_date.strftime('%B %Y')
+    
+    employee = frappe.get_doc("Employee", salary_slip.employee)
+   
+   
+    if not employee.user_id:
+        frappe.throw("Employee does not have an email address (user_id) associated.")
+    
+    pdf_data = frappe.attach_print('Salary Slip', salary_slip.name, print_format="Salary Slip", doc=salary_slip)
+    subject = f"Salary Slip for {employee.employee_name} - "
+    message = f"Dear {employee.employee_name},<br><br>Please find attached your Salary Slip for {formatted_date}<br><br>Best regards,<br>NavGurukul"
+   
+    attachments = [pdf_data]
+    
+    frappe.sendmail(
+        recipients=[employee.user_id],
+        subject=subject,
+        message=message,
+        attachments=attachments,
+        now=True
+    )
+
+    frappe.msgprint(f"Salary slip sent to {employee.user_id} successfully.")
+

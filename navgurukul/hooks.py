@@ -28,7 +28,9 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+    "Salary Structure Assignment" : "public/js/salary_structure.js"
+    }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -142,6 +144,10 @@ doc_events = {
         },
         "Time Tracker":{
             "on_submit":"navgurukul.events.timetracker"
+        },
+        "Salary Slip":{
+
+            "on_submit":"navgurukul.events.send_salary_slip"
         }
 }
 
