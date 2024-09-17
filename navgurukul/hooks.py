@@ -148,6 +148,9 @@ doc_events = {
         "Salary Slip":{
 
             "on_submit":"navgurukul.events.send_salary_slip"
+        },
+        "Leave Policy Assignment":{
+            "on_submit":"navgurukul.events.leave_policy_assignment"
         }
 }
 
