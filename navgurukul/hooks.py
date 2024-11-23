@@ -161,12 +161,12 @@ scheduler_events = {
 # 	"all": [
 # 		"navgurukul.tasks.all"
 # 	],
-# 	"daily": [
-# 		"navgurukul.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"navgurukul.tasks.hourly"
-# 	],
+	# "daily": [
+	# 	"navgurukul.tasks.daily",
+	# ],
+	# "hourly": [
+	# 	"navgurukul.tasks.hourly"
+	# ],
 # 	"weekly": [
 # 		"navgurukul.tasks.weekly"
 # 	],
@@ -175,7 +175,10 @@ scheduler_events = {
 # 	],
    "cron":{ "0 0 * * *":[
         "navgurukul.events.age_increase" ,
-        "navgurukul.events.exprencess_incress"]},
+        "navgurukul.events.exprencess_incress"],
+        "0 20 * * *":["navgurukul.discord_events.send_daily_logs_to_discord"],
+        "0 11 * * *":["navgurukul.leave_logs_discord.send_leave_logs_to_discord"]
+        },
 }
 
 # Testing
